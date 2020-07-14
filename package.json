@@ -1,0 +1,46 @@
+{
+  "name": "s2i-nodejs-nginx-example",
+  "version": "1.0.0",
+  "description": "A webapp example that can be deployed on OpenShift using the s2i-nodejs-nginx builder",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Evan Shortiss <evanshortiss@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:prod",
+    "build:dev": "webpack -d --mode development",
+    "build:prod": "NODE_ENV=production webpack -p --mode production",
+    "docker:build": "s2i build -c . quay.io/evanshortiss/s2i-nodejs-nginx:14 $npm_package_name & echo \"Build complete. Tagged as $npm_package_name\"",
+    "clean": "rm dist/bundle.js",
+    "format": "prettier src/**/*.tsx *.config.js --trailing-comma=none --single-quote --write",
+    "start": "webpack-dev-server --hot --mode development",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "react": "~16.13.1",
+    "react-dom": "~16.13.1",
+    "react-hot-loader": "~4.12.21",
+    "tailwindcss": "~1.4.6"
+  },
+  "devDependencies": {
+    "@hot-loader/react-dom": "~16.13.0+4.12.20",
+    "@types/react": "~16.9.43",
+    "@types/react-dom": "~16.9.8",
+    "autoprefixer": "~9.8.5",
+    "clean-webpack-plugin": "~3.0.0",
+    "css-loader": "~3.6.0",
+    "file-loader": "~6.0.0",
+    "html-loader": "~1.1.0",
+    "html-webpack-plugin": "~4.3.0",
+    "mocha": "~8.0.1",
+    "postcss-loader": "~3.0.0",
+    "prettier": "~2.0.5",
+    "style-loader": "~1.2.1",
+    "ts-loader": "~8.0.0",
+    "typescript": "~3.9.6",
+    "url-loader": "~4.1.0",
+    "webpack": "~4.43.0",
+    "webpack-cli": "~3.3.12",
+    "webpack-dev-server": "~3.11.0"
+  }
+}
