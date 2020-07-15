@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
 import Card from './Card';
-import './custom_typings/import-png'
 
 import Chewbacca from './images/Chewbacca.png';
 import C3PO from './images/C3PO.png';
