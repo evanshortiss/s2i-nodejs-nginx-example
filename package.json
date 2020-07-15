@@ -7,7 +7,7 @@
   "author": "Evan Shortiss <evanshortiss@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "echo \"$(pwd)\" && echo \"$(ls)\" && NODE_ENV=production webpack -p --mode production",
+    "build": "echo \"$(pwd)\" && echo \"$(ls)\" && echo \"$(ls ./node_modules/.bin)\" && NODE_ENV=production webpack -p --mode production",
     "build:dev": "webpack -d --mode development",
     "build:prod": "NODE_ENV=production webpack -p --mode production",
     "docker:build": "s2i build -c . quay.io/evanshortiss/s2i-nodejs-nginx:14 $npm_package_name & echo \"Build complete. Tagged as $npm_package_name\"",
