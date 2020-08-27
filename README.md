@@ -92,8 +92,8 @@ trigger a new build, or setup your own [Build Triggers](https://docs.openshift.c
 
 ### Using a Custom s2i Build Image on OpenShift
 
-Uses [source-to-image (s2i)](https://github.com/openshift/source-to-image) on
-an OpenShift cluster to chain two builds. Requires the [OpenShift CLI](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/getting-started-cli.html).
+Uses [source-to-image (s2i)](https://github.com/openshift/source-to-image)
+to perform a single build. Requires the [OpenShift CLI](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/getting-started-cli.html).
 
 ```bash
 export GIT_REPO=https://github.com/evanshortiss/s2i-nodejs-nginx-example
